@@ -11,5 +11,7 @@ public class RoomInstantiation : MonoBehaviour
     {
         panel.SetActive(false);
         Instantiate(arrayRoom[index], new Vector3(0, 0, 0), Quaternion.identity);
+
+        GameManager.instance.calculateMoney(index);
     }
 }
