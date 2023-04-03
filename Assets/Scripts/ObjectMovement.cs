@@ -29,7 +29,7 @@ public class ObjectMovement : MonoBehaviour
     void moveWithMouse()
     {
         Vector3 mouse = Input.mousePosition;
-        mouse.z = -Camera.main.transform.position.z;
+        mouse.z = -Camera.main.transform.position.z + 3.7f;
 
         mouse = Camera.main.ScreenToWorldPoint(mouse);
         transform.position = new Vector3(Mathf.Round(mouse.x), Mathf.Round(Mathf.Clamp(mouse.y, 0f, 100f)), mouse.z);
