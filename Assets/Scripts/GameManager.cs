@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI goalText;
     [SerializeField] private TextMeshProUGUI currentText;
 
-    private float goal = 800f;
+    private float goal = 400f;
     private float money = 500f;
     private float currentM = 0;
     private float happines = 0;
@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
             timer = 40;
         }
 
-
     }
 
     public void calculateMoney(int index)
@@ -103,6 +102,7 @@ public class GameManager : MonoBehaviour
             }
 
             moneyText.text = money.ToString() + "$";
+            currentM = 0;
         }
 
         else if(timer <= 0)
@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
             }
 
             happinessText.text = happines.ToString();
+            currentM = 0;
         }
     }
 }

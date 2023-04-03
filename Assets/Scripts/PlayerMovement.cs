@@ -18,9 +18,9 @@ public class PlayerMovement : MonoBehaviour
         {
             targetPosotion.x++;
 
-            if(targetPosotion.x >= 16.4f)
+            if(targetPosotion.x >= 148.5f)
             {
-                targetPosotion.x = 16.4f;
+                targetPosotion.x = 148.5f;
             }
         }
 
@@ -28,9 +28,9 @@ public class PlayerMovement : MonoBehaviour
         {
             targetPosotion.x--;
 
-            if(targetPosotion.x <= -26.6f)
+            if(targetPosotion.x <= -125f)
             {
-                targetPosotion.x = -26.6f;
+                targetPosotion.x = -125f;
             }
         }
 
@@ -54,7 +54,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        transform.position = Vector3.Lerp(transform.position, targetPosotion, 0.03f);
+        transform.position = targetPosotion;
+        //Vector3.Lerp(transform.position, targetPosotion, 0.03f);
             
     }
 }
