@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI goalText;
     [SerializeField] private TextMeshProUGUI currentText;
 
-    private float goal = 1500f;
+    private float goal = 800f;
     private float money = 500f;
     private float currentM = 0;
     private float happines = 0;
 
-    private float timer = 10f;
+    private float timer = 40f;
     private Dictionary<int, float> mapRoom = new Dictionary<int, float>();
 
     public static GameManager instance;
@@ -44,12 +44,25 @@ public class GameManager : MonoBehaviour
         happinessText.text = happines.ToString();
         currentText.text = currentM.ToString() + "$";
         goalText.text = goal.ToString()+"$";
+
+        currentText.color = Color.red;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timer -= Time.deltaTime;
+        calculateHappiness();
+
+        if(timer <= 0)
+        {
+            currentM = 0;
+            currentText.text = currentM.ToString() + "$";
+
+            timer = 40;
+        }
+
+
     }
 
     public void calculateMoney(int index)
@@ -100,7 +113,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                happines = happines - 50;
+                happines = happines - 15;
             }
 
             happinessText.text = happines.ToString();
