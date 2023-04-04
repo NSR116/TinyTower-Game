@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             targetPosotion.x++;
 
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
             targetPosotion.x--;
 
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             targetPosotion.y++;
 
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             targetPosotion.y--;
 
@@ -54,8 +54,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        transform.position = targetPosotion;
-        //Vector3.Lerp(transform.position, targetPosotion, 0.03f);
-            
+        transform.position = targetPosotion;            
     }
+
 }

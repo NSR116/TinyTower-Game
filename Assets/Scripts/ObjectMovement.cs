@@ -26,6 +26,9 @@ public class ObjectMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This method used to move created room with mouse position
+    /// </summary>
     void moveWithMouse()
     {
         Vector3 mouse = Input.mousePosition;
@@ -35,6 +38,10 @@ public class ObjectMovement : MonoBehaviour
         transform.position = new Vector3(Mathf.Round(mouse.x), Mathf.Round(Mathf.Clamp(mouse.y, 0f, 100f)), mouse.z);
     }
 
+    /// <summary>
+    /// This method used to check if created room in a valid place to put it or not
+    /// </summary>
+    /// <returns></returns>
     bool isValidPlace()
     {
         for(int i =0; i<arrayPoints.Length; i++)

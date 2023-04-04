@@ -64,6 +64,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// This method used to calculate money of player when create a room
+    /// and current money to check if the player reach goal then change the color of text
+    /// </summary>
+    /// <param name="index"></param>
     public void calculateMoney(int index)
     {
         float price = mapRoom[index];
@@ -85,6 +90,9 @@ public class GameManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// This method used to calculate happiness based on the timer and current money of player
+    /// </summary>
     void calculateHappiness()
     {
         if(timer > 0 && currentM >= goal)
